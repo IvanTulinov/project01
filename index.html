@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript">
+			function ResizeImg(elem, b){
+				if (elem.width === 100)
+					elem.width = 400
+				else
+					elem.width = 100;
+			}
+		</script>
+	</head>
+	<body>
+		<img src="01.jpg" width=100 onclick="ResizeImg(this)">
+	</body>
+</html>
