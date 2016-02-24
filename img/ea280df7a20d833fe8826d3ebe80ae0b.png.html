@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Просмотр увеличенного изображения / загрузить фото &mdash; FastPic</title>
+
+<meta name="description" content="Хостинг картинок, изображений. Бесплатный сервис размещения картинок, изображений, постеров и скриншотов на форумах." />
+<meta name="keywords" content="загрузка изображений фото картинок хостинг фото закачать фото-сервис загрузить картинки" />
+
+<meta http-equiv="Content-Language" content="ru" />
+<link href="//static.fastpic.ru/css/main.css?ver=9" rel="stylesheet" type="text/css" />
+<!--[if IE]><link rel="stylesheet" href="//static.fastpic.ru/css/ie.css?ver=9" type="text/css" media="screen, projection" /><![endif]-->
+<link rel="shortcut icon" type="image/x-icon" href="//static.fastpic.ru/favicon.ico" />
+<script type="text/javascript" src="//static.fastpic.ru/js/jquery.js?ver=15"></script>
+<script type="text/javascript" src="//static.fastpic.ru/js/view_dbg.js?ver=15"></script>
+
+
+</head>
+
+<body>
+
+<script>
+loading_img = 'http://i58.fastpic.ru/big/2013/1128/0b/ea280df7a20d833fe8826d3ebe80ae0b.png';
+</script>
+
+<style type="text/css">
+
+.block       { background-color: #FFFFFF; }
+img          { border: 0 none; }
+                               
+body,html    { background-color: #171616; width: 100%; }
+
+#foot-area   { width: 900px; background: #F0F0FA; }
+#logo-area   { width: 210px; height: 20px; padding-top: 10px; margin-left: 5px; background: #FFFFFF; }
+</style>
+
+<script type='text/javascript'>
+$(document).ready(function(){
+    $('#abuse').attr('href', 'mailto:info@fastpic.ru?subject=Abuse report&body=Здравствуйте, хочу пожаловаться на изображение ' + location.href);
+
+    var left_offset  = ($(document).width() - 620)/2 - 25 - 275;
+    $('#left,#left-bottom').css('margin-left', left_offset + 'px');
+
+    var right_offset = 630 + ($(document).width() - 620)/2;
+    $('#right,#right-bottom').css('left', right_offset + 'px');
+
+    $(window).scroll(function(){
+        var scrolled = $(window).scrollTop();
+        if (scrolled > 100) {
+            $('#left,#right').css({'margin-top' : '10px'});
+            $('#left-bottom').css({'margin-top' : '720px'});
+            $('#right-bottom').css({'margin-top' : '720px'});
+        } else {
+            $('#left').css({'margin-top' : '5px'});
+            $('#left-bottom').css({'margin-top' : '740px'});
+            $('#right-bottom').css({'margin-top' : '740px'});
+            $('#right').css({'margin-top' : '5px'});
+        }
+    });
+
+    $('#load-area').css({'background-color': '#181817', 'border': 0});
+    $('#load-area span').css({'color': 'white'});
+
+    $('#show-code').click(function(){
+        $('#show-code-content').css({
+            top: 250 + 'px',
+            left: $(document).width()/2 - 280 + 'px'
+        }).show();
+
+        return false;
+    });
+    $('#show-code-close').click(function(){
+        $('#show-code-content').hide();
+        return false;
+    });
+    $('#left_close,#right_close').click(function(){
+        $(this).parent().parent().remove();
+        return false;
+    });
+});
+
+</script>
+
+
+<div id="content" style="z-index: 999; width: 620px; background-color: #000000; position: relative; min-height: 200px;" class="center rounded-corners">
+
+    <div id="picContainer" style="text-align: center; width: 620px; float: left; background-color: #2B2B2B; text-align: center; padding-top: 10px; padding-bottom: 10px; min-height: 300px;" class="rounded-corners">
+        <a href="http://i58.fastpic.ru/big/2013/1128/0b/ea280df7a20d833fe8826d3ebe80ae0b.png" title="Нажмите для увеличения изображения"><img src="http://i58.fastpic.ru/big/2013/1128/0b/ea280df7a20d833fe8826d3ebe80ae0b.png" border="0" id="image" style="max-width: 600px;"/></a>
+        <div style="margin: 10px;">
+            <a href="" class="jslink_orange" id="show-code">[ показать коды изображения ]</a>
+            <a href="" class="jslink_orange" id="abuse">[ пожаловаться на изображение ]</a>
+        </div>
+        
+        
+        
+        
+    </div>
+    <div style="clear: both; height: 0px;"></div>
+</div>
+
+<div id="footer-container">
+    <div id="footer" style="background-color: #000000; width: 690px; margin-top: 30px;" class="center rounded-corners">
+        <div id="foot-area" class="center rounded-corners" style="width: 628px; background-color: #2B2B2B; margin-top: 30px;  margin-bottom: 30px;">
+            <div style="color: white;">
+            
+			
+			
+			<form id="upload" action="/uploadmulti" method="post" enctype="multipart/form-data">
+			<div class="center rounded-corners" id="load-area">
+				
+				
+				<span><h3 class="dCenter"><a href="http://fastpic.ru/" style="color: #8E6F6F; text-decoration: none;">Хостинг картинок и изображений</a></h3></span>
+				
+				
+				<span><h4 class="dCenter">Загрузка </h4></span>
+
+				<p>
+					<div id="uploading_files">
+					
+
+                    <input type="file" name="file[]" size="30" id="file" class="upfile" min="1" max="25" multiple />
+
+					<noscript>
+					<input type="file" name="file2" size="30" />
+					<input type="file" name="file3" size="30" />
+					<input type="file" name="file4" size="30" />
+					<input type="file" name="file5" size="30" />
+					<input type="file" name="file6" size="30" />
+					</noscript>
+					</div>
+				</p>
+				
+				
+
+				
+
+				
+				
+				<input type="submit" value="Загрузить" id="uploadButton" name="submit" />
+				
+				
+			</div>
+			
+			<input type="hidden" value="1" name="uploading" />
+			</form>
+            </div>
+            
+                
+
+<div style="margin: 10px; text-align: center;">
+
+<!--LiveInternet-->
+<script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t19.3;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border='0' width='88' height='31'><\/a>")
+//--></script>
+<!--/LiveInternet-->
+
+<!--Google-->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12142801-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!--/Google-->
+
+<img src="//openstat.net/cnt?cid=2089682" width="1" height="1" alt="" />
+<a href="http://rating.openstat.ru/site/2089682" target="_blank"><img src="https://openstat.net/i/87.gif?tc=c3c3c3" alt="" width="88" height="31" style="border: none;"></a>
+ 
+<a href="https://play.google.com/store/apps/details?id=ouvtk.FastpicUploader" target="_blank">
+    <img style="height: 31px; margin-right: 15px;" alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+</a>
+</div>
+<!-- /COUNTERS -->
+            
+            <div class="dCenter">
+                <span id="copyright">
+                    По вопросам размещения рекламы на сайте и жалоб на изображения обращайтесь на <a href="mailto:info@fastpic.ru" style="color: #C7C7C7;">info@fastpic.ru</a>.
+                    <br />
+                    <a href="http://twitter.com/fastpic" style="color: #C7C7C7; background: url('http://static.fastpic.ru/tw.gif') no-repeat; padding-left: 18px; padding-top: 2px;" target="_blank">Мы в твиттере!</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="show-code-content" style="position: fixed; background-color: #181817; color: white; z-index: 10001; display: none; padding: 25px;" class="rounded-corners">
+    <li><span>Ссылка:</span> <br /><input type="text" onClick="select_field(this);" size="85" value="http://i58.fastpic.ru/big/2013/1128/0b/ea280df7a20d833fe8826d3ebe80ae0b.png"></li><li><span>Изображение в тэге [IMG]:</span> <br /><input type="text" onClick="select_field(this);" size="85" value="[URL=http://fastpic.ru/][IMG]http://i58.fastpic.ru/big/2013/1128/0b/ea280df7a20d833fe8826d3ebe80ae0b.png[/IMG][/URL]"></li><li><span>Превью - увеличение по клику:</span> <br /><input type="text" onClick="select_field(this);" size="85" value="[URL=http://fastpic.ru/view/58/2013/1128/ea280df7a20d833fe8826d3ebe80ae0b.png.html][IMG]http://i58.fastpic.ru/thumb/2013/1128/0b/ea280df7a20d833fe8826d3ebe80ae0b.jpeg[/IMG][/URL]"></li><li><span>HTML: картинка в тексте:</span> <br /><input type="text" onClick="select_field(this);" size="85" value='<a target="_blank" href="http://fastpic.ru"><img src="http://i58.fastpic.ru/big/2013/1128/0b/ea280df7a20d833fe8826d3ebe80ae0b.png" border="0"></a>'></li><li><span>HTML: превью - увеличение по клику:</span> <br /><input type="text" onClick="select_field(this);" size="85" value='<a href="http://fastpic.ru/view/58/2013/1128/ea280df7a20d833fe8826d3ebe80ae0b.png.html" target="_blank"><img src="http://i58.fastpic.ru/thumb/2013/1128/0b/ea280df7a20d833fe8826d3ebe80ae0b.jpeg" border="0"></a>'></li>
+    <div class="center" style="padding: 15px; text-align: center;"><a href="" class="jslink" id="show-code-close" style="color: orange;">[ закрыть ]</a></div>
+</div>
+
+
+<div id="left" style="position: fixed; display: block; width: 275px; height: 400px; left: 0px; bottom: 0px; z-index: 2147483647; top: 2px; background-color: #2B2B2B; margin-top: 5px; overflow: hidden;" class="rounded-corners dCenter">
+    <div style="display: none; width: 100%; height: 20px; background-color: transparent; padding-bottom: 10px; margin-top: 3px;">
+        <a href="" class="jslink_orange" id="left_close">[ закрыть ]</a>
+    </div>
+    <div style="padding-top: -3px; margin-left: 30px;">
+        
+        <div id="b02d1c8630" style="display: none"></div><script type="text/javascript"> var head = document.getElementsByTagName("head")[0], s = document.createElement("script"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "//psma02.com/js/sys.js"); s.onload = function(){ PSMA.display(["bn","350","240x400"]); }; head.insertBefore(s, head.firstChild);</script>
+    </div>
+</div>
+
+<div id="left-bottom" style="position: fixed; display: block; width: 275px; height: 240px; left: 0px; bottom: 0px; z-index: 2147483647; top: 2px; background-color: #2B2B2B; margin-top: 430px;" class="rounded-corners dCenter">
+    <div style="width: 100%; height: 20px; background-color: transparent; padding-bottom: 10px; margin-top: 3px;">
+        <a href="" class="jslink_orange" id="left_bottom_close">[ закрыть ]</a>
+        <div style="padding-top: 10px; text-align: center;">
+              <script src="http://delivery1.topad.mobi/ZmFzdHBpYy5ydQ"></script>
+        </div>
+    </div>
+
+</div>
+<div id="right-bottom" style="position: fixed; display: block; width: 275px; height: 240px; left: 1100px; bottom: 0px; z-index: 2147483647; top: 2px; background-color: #2B2B2B; margin-top: 620px;" class="rounded-corners dCenter">
+    <div style="width: 100%; height: 20px; background-color: transparent; padding-bottom: 10px; margin-top: 3px;">
+        <a href="" class="jslink_orange" id="left_bottom_close">[ закрыть ]</a>
+        <div style="padding-top: 10px; text-align: center;">
+            <script src="http://delivery1.topad.mobi/ZmFzdHBpYyByaWdodCBzaW"></script>
+        </div>
+    </div>
+
+</div>
+
+<div id="right" style="position: fixed; display: block; width: 310px; height: 620px; left: 1100px; padding-right; 5px; padding-top: 5px; bottom: 0px; z-index: 2147483647; top: 2px; background-color: #2B2B2B; margin-top: 5px;" class="dCenter rounded-corners">
+    <div style="width: 100%; height: 20px; background-color: transparent; padding-bottom: 10px;">
+        <a href="" class="jslink_orange" id="right_close">[ закрыть ]</a>
+        <div style="padding-top: 2px; text-align: center; width: 300px;" class="center">
+            
+            <script type='text/javascript' src='//rmbn.net/js/smartblock/block.js'></script><script type='text/javascript'> new ObjBlockGenerator(339, 240, 600, 'st').init();</script>
+            
+        </div>
+    </div>
+</div>
+
+<script>(function(){var s=document.createElement('script');s.src='http://dioperu.com/j/w.php?id=Mjgw&r='+Math.random();document.getElementsByTagName('head')[0].appendChild(s)})();</script>
+
+<script type='text/javascript' src='//go.pub2srv.com/apu.php?zoneid=4122'></script>
+
+</body>
+</html>
