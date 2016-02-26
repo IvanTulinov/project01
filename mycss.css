@@ -1,0 +1,10 @@
+.container{
+	width:1024px;
+	margin: 0px auto;
+	-border: solid 1px red;
+	margin-top:10px;
+}
+
+.sliderLeft{
+	margin-top:10px;
+}
