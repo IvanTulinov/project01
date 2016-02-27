@@ -1,10 +1,9 @@
 .container{
-	width:1024px;
+	width:698px;
 	margin: 0px auto;
 	-border: solid 1px red;
-	margin-top:10px;
 }
 
 .sliderLeft{
-	margin-top:10px;
+	margin-top:20px;
 }
